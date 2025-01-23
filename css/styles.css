@@ -1,5 +1,6 @@
 body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
 }
 
 #project-container {
@@ -31,37 +32,40 @@ body {
 /* showcase */
 
 .showcase {
-    display: flex; /* Align children in a row */
-    justify-content: center; /* Center the content */
-    gap: 20px; /* Add space between images */
-    margin: 20px 0; /* Add spacing above and below */
+    display: flex; 
+    justify-content: center; 
+    margin: 20px 0;
+    gap: 20px;
+    text-align: center;
 }
 
 .showcase img {
-    width: 200px; /* Adjust image width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3); 
+    transition: opacity 0.5s ease;
+}
+
+.showcase img:hover{    
+    opacity: 1;
+}
+.showcase img:not(:hover){
+    opacity: 0.5;
 }
 
 h1 {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
+    color: white;
     font-size: 35px;
     background-color: rgb(168, 24, 24);
     padding: 10px;
-    margin-bottom: 20px;
+    margin: 0;
 }
-
-#goBack a {
-    color: blue;
+a{
+    color: black;
     text-decoration: none;
-}
-
-#goBack a:hover {
-    color: darkblue;
-    text-decoration: underline;
 }
 
 footer {
@@ -72,4 +76,22 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+}
+#project, #about, #main{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    width: 33%;
+    border-radius: 2%;
+    gap: 10px;
+    height: auto;
+}
+#project:hover, #about:hover, #main:hover{
+    text-decoration: underline;
 }
