@@ -81,6 +81,33 @@ footer {
     display: flex;
     flex-direction: row;
 }
+.project-content{
+    display: none;
+    position:absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1;
+    width: 213px;
+}
+.project-content p{
+    margin: 5px 0;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+}
+.project-content p:hover{
+    background-color: rgba(128, 128, 128, 0.17);
+}
+#project{
+    position: relative;
+    display: inline-block;
+}
+#project:hover .project-content{
+    display: block;
+}
 #project, #about, #main{
     display: flex;
     flex-wrap: wrap;
