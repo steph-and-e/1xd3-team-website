@@ -5,6 +5,7 @@
 
 :root {
     --purple: #b491f4;
+    --purple-hover: #cbb1fc;
     --orange: #e69660;
     --grey: #a9b1d6;
     --blue: #58bedd;
@@ -87,6 +88,11 @@ li::before {
     padding: 10px 20px;
     border-radius: var(--border-radius);
     background-color: var(--purple);
+}
+
+.button:hover {
+    background-color: var(--purple-hover);
+    transition: 0.2s ease;
 }
 
 .purple {
