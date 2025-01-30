@@ -10,6 +10,7 @@
     --blue: #58bedd;
     --background-colour: #1A1B25;
     --tile-colour: #303143;
+    --border-radius: 5px;
 }
 
 body {
@@ -32,7 +33,7 @@ h2 {
     color: var(--purple);
     font-size: 48px;
     font-weight: 600;
-    margin-top: 50px;
+    margin-top: 130px;
 }
 
 h4 {
@@ -71,7 +72,7 @@ li::before {
     font-size: 22px;
     font-weight: 400;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     background-color: var(--purple);
 }
 
@@ -112,6 +113,7 @@ nav {
 footer  {
     border-top: var(--grey) solid 1px;
     padding: 50px;
+    padding-left: 7vw;
 }
 
 footer p {
@@ -158,11 +160,15 @@ footer p {
 }
 
 /* about styling */
+
 #about-section {
-    margin-top: 100px;
+    /* padding-top: 100px; */
 }
 
-/* about styling */
+#about-blurb {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
 
 #team-container {
     margin-top: 20px;
@@ -174,7 +180,8 @@ footer p {
 
 .team-member {
     width: 23.5%;
-    padding: 10px;
+    padding: 15px;
+    border-radius: var(--border-radius);
     background-color: var(--tile-colour);
 }
 
