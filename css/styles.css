@@ -9,8 +9,8 @@
     --grey: #a9b1d6;
     --blue: #58bedd;
     --background-colour: #1A1B25;
-    --tile-colour: #303143;
-    /* --tile-colour: #272736; */
+    --tile-colour: #2c2c42;
+    --tile-colour-hover: rgb(69, 71, 96);;
     --border-radius: 5px;
 }
 
@@ -37,7 +37,15 @@ h2 {
     color: var(--purple);
     font-size: 48px;
     font-weight: 600;
-    margin-top: 130px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 20px;
 }
 
 h4 {
@@ -96,13 +104,41 @@ li::before {
     width: 85vw;
 }
 
+.section-blurb {
+    margin-bottom: 50px;
+}
+
+/* tile styling */
+.tile {
+    border-radius: var(--border-radius);
+    background-color: var(--tile-colour);
+}
+
+.tile:hover {
+    background-color: var(--tile-colour-hover);
+    transition: 0.3s ease;
+}
+
+.big-tile {
+    padding: 20px;
+    margin-bottom: 150px;
+}
+
+.big-tile-blurb {
+    margin: 50px;
+}
+
+.big-tile-blurb p {
+    margin-bottom: 40px;
+}
+
 /* navbar styling */
 
 nav {
     top: 0;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
@@ -112,7 +148,8 @@ nav {
 }
 
 .navlink {
-    margin: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
     font-size: 22px;
     color: var(--grey);
     text-decoration: none;
@@ -175,11 +212,6 @@ footer p {
     /* padding-top: 100px; */
 }
 
-#about-blurb {
-    margin-top: 20px;
-    margin-bottom: 50px;
-}
-
 #team-container {
     margin-top: 20px;
     display: flex;
@@ -191,9 +223,15 @@ footer p {
 .team-member {
     width: 23.5%;
     padding: 15px;
-    border-radius: var(--border-radius);
-    background-color: var(--tile-colour);
 }
+
+.tile :hover team-member {
+    opacity: 5%;
+}
+
+/* .team-member :hover {
+    background-color: #a9b1d6;
+} */
 
 .team-member-image {
     width: 100%;
@@ -231,7 +269,7 @@ footer p {
     opacity: 0.5;
 }
 
-h3 {
+/* h3 {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
@@ -239,14 +277,8 @@ h3 {
     background-color: rgb(168, 24, 24);
     padding: 10px;
     margin: 0;
-}
+} */
 
-/* navbar styling */
-
-.navbar{
-    display: flex;
-    flex-direction: row;
-}
 
 /* showcase styling */
 
