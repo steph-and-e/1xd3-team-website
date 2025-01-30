@@ -10,17 +10,21 @@
     --blue: #58bedd;
     --background-colour: #1A1B25;
     --tile-colour: #303143;
+    /* --tile-colour: #272736; */
     --border-radius: 5px;
 }
 
 body {
     background-color: var(--background-colour);
     color: var(--grey);
-    font-family: "Fira Code", serif;
+    /* font-family: "Fira Code", serif; */
+    font-family: "Source Code Pro", serif;
     font-optical-sizing: auto;
-    font-weight: 100;
+    /* font-weight: 100; */
+    font-weight: 390;
     font-style: normal;
-    letter-spacing: 0.04ch;
+    /* letter-spacing: 0.04ch; */
+    letter-spacing: -0.02ch;
 }
 
 h1 {
@@ -62,7 +66,8 @@ li::before {
 }
 
 .bold {
-    font-weight: 800;
+    /* font-weight: 800; */
+    font-weight: 900;
 }
 
 .button {
@@ -74,6 +79,11 @@ li::before {
     padding: 10px 20px;
     border-radius: var(--border-radius);
     background-color: var(--purple);
+}
+
+.purple {
+    color: var(--purple);
+    font-weight: 500;
 }
 
 .section {
@@ -189,6 +199,11 @@ footer p {
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.team-member-blurb {
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 /* showcase styling */
