@@ -21,8 +21,12 @@
       <div class="container">
         <h2>/project</h2>
         <ul id="project-blurb" class="section-blurb">
-          <li><span class="bold"> $PROJECT_NAME:</span> Lazy Spoon</li>
-          <li><span class="bold"> $CLIENT:</span> Betul Selin Asdemir</li>
+          <li class="header-blurb-li">
+            <span class="bold"> $PROJECT_NAME:</span> Lazy Spoon
+          </li>
+          <li class="header-blurb-li">
+            <span class="bold"> $CLIENT:</span> Betul Selin Asdemir
+          </li>
         </ul>
         <div class="tile big-tile">
           <!-- <div class="macbook-menu">
@@ -42,28 +46,345 @@
               student housing and struggling with their meal preps. Since most
               students own laptops and are comfortable with using it they are
               more likely access our web page through desktop.
+              <br />
+              <br />
+              <br />
             </p>
             <p>
               <span class="purple">Static Information: </span>Nutrition tips and
               how to have a balanced meal will be added as static information.
               Most of the time people are not informed about nutrition facts
               which causes them to get more fat/protein than they might need.
+              <br />
+              <br />
+              <br />
             </p>
             <p>
               <span class="purple">Design Elements: </span>Our client wants to
               have big pictures, pale tones, and minimalistic feel overall. She
               does not want the website to be harsh on the eyes.
+              <br />
+              <br />
+              <br />
             </p>
             <p>
               <span class="purple">Data: </span>Generating most popular receipes
               based on user’s ratings. Collecting people’s preferences for
               nutritional facts and allergies.
+              <br />
+              <br />
+              <br />
             </p>
             <p>
               <span class="purple">Simple Interactive Elements: </span>Our
               client wants to match people based on their food preferences and
               favourite foods. This system will be almost like having a penpal
               who you can talk to about food and your nutrition goals.
+              <br />
+              <br />
+            </p>
+          </div>
+        </div>
+        <!-- DEVELOPMENT PLAN -->
+        <div class="tile big-tile">
+          <h3>$ development plan</h3>
+          <div class="big-tile-blurb">
+            <!-- Names -->
+            <p class="purple">Names: <br /><br /></p>
+            <ul>
+              <li><span class="blue"> Name: </span> Team 404 Not Found</li>
+              <li>
+                <span class="blue"> Members: </span> Zeynep, Rebecca, Mostafa,
+                Stephanie
+              </li>
+              <li><span class="blue"> Website: </span> Lazy Spoon</li>
+              <li><span class="blue"> Client: </span> Betul Selin Asdemir</li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <!-- Purpose -->
+            <p>
+              <span class="purple">Purpose: </span>
+              <br />
+              <br />
+              As a college student, our client knows all too well the heartbreak
+              of discovering a once-promising avocado has transformed into a
+              science experiment in the back of the fridge. Meal planning is
+              tough—especially for students juggling limited time, budgets, and
+              a constantly rotating supply of ingredients. Traditional AI recipe
+              generators often spit out bizarre, impractical suggestions
+              (looking at you, "banana tuna salad"), while basic web scrapers
+              drown users in a sea of unverified, low-quality recipes. What
+              students really need is a reliable, easy-to-use meal-planning tool
+              that won’t suggest putting peanut butter on pasta just because
+              both words exist in a database.
+              <br />
+              <br />
+              That’s why we created Lazy Spoon, a community-driven recipe
+              generator that combines the best of AI-powered web scraping with
+              human curation. Our system pulls recipes from the web, organizes
+              them into a structured database, and then lets real users refine,
+              review, and remix them—ensuring students get practical,
+              student-approved meal ideas. Users can input ingredients they have
+              at home, specify dietary preferences, and receive relevant,
+              personalized recipe suggestions. Whether you’re a dorm chef making
+              magic with a microwave or a student with an actual kitchen (lucky
+              you), our platform makes sure you never have to stare into your
+              fridge and wonder, "What on earth can I make with this?" again.
+              <br />
+              <br />
+              <br />
+              <br />
+            </p>
+            <!-- Data Description -->
+            <p class="purple">Data Description: <br /><br /></p>
+            <p class="orange">Users</p>
+            <ul>
+              <li>
+                <span class="blue">Purpose: </span>Store user information for
+                authentication and role management
+              </li>
+              <li>
+                <span class="blue">Fields: </span>user_id (PK, INT), username
+                (VARCHAR), password_hash (VARCHAR), email (VARCHAR), role (ENUM:
+                user, moderator, admin)
+              </li>
+            </ul>
+            <br />
+            <p class="orange">Recipes</p>
+            <ul>
+              <li>
+                <span class="blue">Purpose: </span>Store recipe details,
+                including those scraped from the web and user-submitted ones
+              </li>
+              <li>
+                <span class="blue">Fields: </span>recipe_id (PK, INT), title
+                (VARCHAR), ingredients (TEXT), instructions (TEXT), submitted_by
+                (FK, INT, Users), source (ENUM: scraped, user-submitted),
+                approval_status (ENUM: pending, approved, rejected)
+              </li>
+            </ul>
+            <br />
+            <p class="orange">Recipe_Ingredients</p>
+            <ul>
+              <li>
+                <span class="blue">Purpose: </span>Normalize ingredient data by
+                associating multiple ingredients with recipes
+              </li>
+              <li>
+                <span class="blue">Fields: </span>recipe_id (FK, INT, Recipes),
+                ingredient_name (VARCHAR), quantity (VARCHAR), unit (VARCHAR)
+              </li>
+            </ul>
+            <br />
+            <p class="orange">Reviews</p>
+            <ul>
+              <li>
+                <span class="blue">Purpose: </span>Store user feedback on
+                recipes
+              </li>
+              <li>
+                <span class="blue">Fields: </span>review_id (PK, INT), recipe_id
+                (FK, INT, Recipes), user_id (FK, INT, Users), rating (INT),
+                comment (TEXT), timestamp (DATETIME)
+              </li>
+            </ul>
+            <br />
+            <p class="orange">Remixes</p>
+            <ul>
+              <li>
+                <span class="blue">Purpose: </span>Allow users to modify
+                existing recipes and contribute new versions
+              </li>
+              <li>
+                <span class="blue">Fields: </span>remix_id (PK, INT),
+                original_recipe_id (FK, INT, Recipes), new_recipe_id (FK, INT,
+                Recipes), user_id (FK, INT, Users), timestamp (DATETIME)
+              </li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <!-- Functions Performed By App -->
+            <p class="purple">Functions Performed By The App:</p>
+            <br />
+            <p class="orange">User Authentication</p>
+            <ul>
+              <li>&nbsp;Register new users (INSERT)</li>
+              <li>&nbsp;Login/logout (SELECT)</li>
+              <li>&nbsp;Role-based access control (SELECT, UPDATE)</li>
+            </ul>
+            <br />
+            <p class="orange">Recipe Scraping and Display</p>
+            <ul>
+              <li>&nbsp;Scrape and standardize recipe data (INSERT)</li>
+              <li>
+                &nbsp;Display recipes matching user-input ingredients (SELECT)
+              </li>
+            </ul>
+            <br />
+            <p class="orange">Managing Root Accounts</p>
+            <ul>
+              <li>&nbsp;Approve/reject user-submitted recipes (UPDATE)</li>
+              <li>&nbsp;Assign moderator roles (UPDATE)</li>
+            </ul>
+            <br />
+            <p class="orange">Updating Recipes</p>
+            <ul>
+              <li>
+                &nbsp;Allow users to edit or remix recipes (INSERT, UPDATE)
+              </li>
+              <li>&nbsp;Store user ratings and comments (INSERT)</li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <!-- Role of PHP and Javascript -->
+            <p>
+              <span class="purple">Role of PHP and JavaScript: </span>
+              <br />
+              <br />
+              The purpose of using PHP is to store and retrieve recipes,
+              ingredients, costs and name of the meals from the database. Also,
+              it’ll be used for user authentication, registering/logging users
+              to save their favorite recipes. And users can submit comments and
+              ratings for recipes.
+              <br />
+              <br />
+              The purpose of using JavaScript is to implement features like
+              search filters, category sorting, and ingredient checklist.
+              Furthermore, it’ll be used to check user inputs before submission
+              to ensure valid recipe data, email, password, etc. JavaScript can
+              be handy to improve user interface like drop-down menu, smooth
+              animations and effects for images and detailed recipes.
+              <br />
+              <br />
+              They work together to fetch recipes from a database by PHP and
+              represent it in the browser by JavaScript. We can use PHP to
+              update, insert, delete recipes inside the database and send a
+              success message and JavaScript displays it without refreshing the
+              page. When the user submits a recipe, JavaScript validates the
+              input, then sends it to PHP for storage.
+              <br />
+              <br />
+              <br />
+              <br />
+            </p>
+            <!-- Roles of Team Members -->
+            <p class="purple">Roles of Team Members: <br /><br /></p>
+            <ul>
+              <li>
+                <span class="blue"> Mostafa: </span> User authentication (login,
+                registration, role management)
+              </li>
+              <li>
+                <span class="blue"> Stephanie: </span> AI-driven recipe scraping
+                and recipe display functionality
+              </li>
+              <li>
+                <span class="blue">Zeynep: </span> Root account management
+                (moderator tools, recipe approval)
+              </li>
+              <li>
+                <span class="blue">Rebecca: </span> Recipe editing and remixing
+                features
+              </li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <!-- The Increments -->
+            <p class="purple">The Increments: <br /><br /></p>
+            <p>
+              <span class="orange"
+                >Increment 1 (Basic functionality & setup) </span
+              >- Due: Week 12
+            </p>
+            <p>
+              Goal: Set up UI/UX, project structure, database and authentication
+            </p>
+            <br />
+            <ul>
+              <li>
+                <span class="blue"> Mostafa: </span>Implement user
+                authentication (registration, login, password hashing)
+              </li>
+              <li>
+                <span class="blue"> Stephanie: </span>Design UI/UX, set up the
+                AI-driven recipe scraper (basic version, fetching recipes from a
+                single source)
+              </li>
+              <li>
+                <span class="blue"> Zeynep: </span>Create database schema and
+                implement initial root account functionalities (admin panel
+                setup)
+              </li>
+              <li>
+                <span class="blue"> Rebecca: </span>Implement basic recipe
+                submission form (users can manually add recipes to the database)
+              </li>
+            </ul>
+            <br />
+            <p>
+              <span class="orange"
+                >Increment 2 (Core features & User Interaction) </span
+              >- Due: Week 13
+            </p>
+            <p>
+              Goal: Implement core recipe discovery, user interaction, and
+              moderation features
+            </p>
+            <br />
+            <ul>
+              <li>
+                <span class="blue"> Mostafa: </span>Implement session management
+                & role management
+              </li>
+              <li>
+                <span class="blue"> Stephanie: </span>Expand scraper to pull
+                from multiple sources
+              </li>
+              <li>
+                <span class="blue"> Zeynep: </span>Implement moderation tools
+                (approve/reject recipes)
+              </li>
+              <li>
+                <span class="blue"> Rebecca: </span>Add rating/comment system
+              </li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <!-- Client -->
+            <p>
+              <span class="purple">Client: </span> <br /><br />
+              When we presented our idea for the name in the Initial Client
+              report it was not set and our client did not really comment on it.
+              However when we decided on the name and asked for their feedback,
+              they said, “I really like the name Lazy Spoon, I think we can go
+              with that.”
+              <br />
+              <br />
+              After brainstorming we have decided that fully depending on web
+              scraping will be difficult since we will need to get permissions
+              from the websites. Our client said they were okay with utilizing
+              AI to put the recipes in the same format. So we can pull the
+              recipes from different websites without thinking about the
+              formatting and AI will put it into a nice form for us.
+              <br />
+              <br />
+              Another point of discussion was how accounts would add recipes.
+              Our client stated, “I think something unique about this website is
+              how community driven it is”. So we have decided to let the users
+              add and edit the recipes as they like. The generator will be
+              relying on individual experiences as well which makes it
+              community-driven. Since our client was concerned about everyone
+              being able to add and edit recipes, we have decided to make a
+              couple root accounts that will need to go in and approve the
+              changes or new recipes to keep the webpage in order.
+              <br />
+              <br />
             </p>
           </div>
         </div>
