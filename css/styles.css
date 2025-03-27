@@ -330,3 +330,12 @@ footer p {
 #project:hover, #about:hover, #main:hover{
     text-decoration: underline;
 }
+#canvas{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 85vw;
+    margin-bottom: 8vw;
+}
